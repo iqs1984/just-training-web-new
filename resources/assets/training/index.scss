@@ -1,0 +1,63 @@
+@import "~toastr/build/toastr.min.css";
+
+body {
+    min-height: initial;
+}
+
+.display-inline {
+    display: inline-block;
+}
+
+.player-profile-pic {
+    height: 40px;
+    width: 40px;
+}
+
+.group-icon {
+    height: 60px;
+    width: 60px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.groups {
+    .group-card {
+
+    }
+}
+
+//Sport style
+.sports {
+    .sports-list {
+        .sport-icon {
+            width: 30px;
+            height: 30px;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        border-bottom: 1px solid lightgrey;
+
+        &:last-child {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
+//Sport style
+
+//Trainings Player
+.training-player-table {
+    .player-image {
+        img {
+            min-width: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    }
+}
+
+//Trainings Player

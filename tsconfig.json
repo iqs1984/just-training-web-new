@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "jsx": "react",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "include": [
+    "resources/assets/**/*"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "laravel",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Shridhar Sharma <shridharkaushik29@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "angular-laravel"
+  ],
+  "homepage": "https://github.com/shridharkaushik29/laravel",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-ui-router": "^1.0.18",
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.1.1"
+  }
+}
