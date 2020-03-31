@@ -187,15 +187,15 @@ class Player extends Model {
             });
         }
 
-        $this->apps->each(function ($app) {
-            $app->holder()->dissociate()->save();
-        });
+//        $this->apps->each(function ($app) {
+//            $app->holder()->dissociate()->save();
+//        });
 
-        $notification = Notification::make();
-        $notification->data = [
-            "logout" => true
-        ];
-        $notification->send($this->apps);
+//        $notification = Notification::make();
+//        $notification->data = [
+//            "logout" => true
+//        ];
+//        $notification->send($this->apps);
 
         return true;
     }

@@ -14,7 +14,7 @@ $this->validate_request([
     "name" => "required",
     "mobile" => "required|regex:/^[0-9\-\+]{10,16}$/",
     "email" => "required|email",
-    "gender" => "required",
+    //"gender" => "required",
 ]);
 
 $allow_types = ['jpg', 'jpeg', 'png'];

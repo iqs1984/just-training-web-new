@@ -7,6 +7,7 @@ use App\Model\Player;
 $player = Player::loggedIn();
 if ($player) {
     $query = $player->groups();
+    $query->withCount(['players']);
 } else if (Admin::loggedInOrFail()) {
     $query = Group::query();
     $query->with(['players.user']);

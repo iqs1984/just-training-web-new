@@ -108,11 +108,9 @@ class Training extends Model {
             "training_id" => $this->id
         ];
 
-       // $apps = $this->players->where('payment_expired','>=',Carbon::now())->pluck("apps")->flatten();
+        // $apps = $this->players->where('payment_expired','>',Carbon::now()->toDateTimeString())->pluck("apps")->flatten();
         $apps = $this->players->pluck("apps")->flatten();
 
-//        print_r($apps);
-//        exit();
 
         $notification->send($apps);
 
@@ -182,8 +180,8 @@ class Training extends Model {
     }
 
     /**
-   * return bool
-    */
+     * return bool
+     */
     function getDateTimestampAttribute(){
         if($this->date_time){
             $date=  $this->date_time->timestamp.'000';

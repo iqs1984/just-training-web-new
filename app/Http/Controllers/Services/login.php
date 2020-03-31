@@ -45,7 +45,7 @@ if($user->role_id == 2){
             User::logout();
             $token_data = $user->tokens()->whereType("login")->orderBy('id','desc')->first();
             $token_data->delete();
-            $this->error("Your payment plan has expired.");
+            $this->error("Your payment plan has expired. Please contact app administrator.");
         }else{
             $token_data = $user->tokens()->whereType("login")->orderBy('id','desc')->first();
             $token_data->expiry = $players_data->payment_expired;
@@ -61,6 +61,10 @@ $app = App::current();
 if ($app && $user->player) {
     $this->setData("app_token", $app);
     $app->holder()->associate($user->player)->save();
+}
+
+if($app && $user->role_id == 1){
+    $app->holder()->associate($user)->save();
 }
 
 $this->setData('user', $user);

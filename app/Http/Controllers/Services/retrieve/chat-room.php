@@ -26,9 +26,9 @@ if ($player) {
     $chat_room = ChatRoom::whereHas('members',function ($query) use($user){
         $query->wherePlayerId($user->player->id);
     })->with(['members'])->withCount(['messages'=>function($model) use($user){
-            $model->whereHas('receivers',function ($models) use($user) {
-                $models->wherePlayerId($user->player->id)->where('seen_at', '=', null);
-            });
+        $model->whereHas('receivers',function ($models) use($user) {
+            $models->wherePlayerId($user->player->id)->where('seen_at', '=', null);
+        });
     }])->get();
 
     $this->setData('groups', $chat_room);

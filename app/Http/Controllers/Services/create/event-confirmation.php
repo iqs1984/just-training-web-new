@@ -42,6 +42,7 @@ $training_data = Event::find($this->event_id);
 $notification = Notification::make();
 $notification->title = $training_data->title;
 $notification->description = $training_data->description;
+$notification->picture_url = $training_data->image->url;
 $notification->data = [
     "ios_badgeType" => "Decrease",
     "ios_badgeCount" => 1

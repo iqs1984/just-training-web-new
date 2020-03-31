@@ -6,6 +6,7 @@ use App\Model\User;
 $user = User::loggedInUser();
 
 if ($user && $user->role->slug === 'player') {
+    !$user->player->is_paid && $this->error("Your account is suspended.");
     $query = $user->player->events();
 } else {
     $query = Training::query();
@@ -21,6 +22,6 @@ if ($this->confirmed_players == 2) {
 
 $query->whereId($this->id);
 
-$query->with(['sports', 'groups']);
+$query->with(['sports', 'groups'])->withCount(['confirmed_players', 'unconfirmed_players','do_not_confirmed_players']);
 
 $this->setData('event', $query->firstOrFail());

@@ -11,15 +11,15 @@ use App\Model\Notification;
 use App\Model\Player;
 
 $this->validate_request([
-    "one_signal_id" => "required"
+    "firebase_token" => "required"
 ]);
 
 $player = Player::loggedIn();
 
-$model = App::whereOneSignalId($this->one_signal_id)->first() ?: App::make();
+$model = App::wherePushToken($this->firebase_token)->first() ?: App::make();
 
-$model->one_signal_id = $this->one_signal_id;
-$model->push_token = $this->push_token;
+//$model->one_signal_id = $this->one_signal_id;
+$model->push_token = $this->firebase_token;
 $model->platform = $this->platform;
 
 if ($player) {

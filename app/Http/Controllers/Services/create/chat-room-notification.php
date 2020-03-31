@@ -7,6 +7,7 @@
  */
 
 use App\Model\Admin;
+use App\Model\App;
 use App\Model\ChatMessage;
 use App\Model\ChatRoom;
 use App\Model\User;
@@ -30,7 +31,10 @@ $notification->data = [
 
 $apps = $group->players->pluck("apps")->flatten();
 
-$notification->send($apps);
+
+$admin_apps = App::whereHolderType('App\Model\User')->get();
+
+$notification->send($admin_apps->merge($apps));
 
 $message = ChatMessage::make();
 $message->content = $this->text;

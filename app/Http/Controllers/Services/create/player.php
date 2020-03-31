@@ -54,10 +54,12 @@ if ($this->image) {
 $model->save();
 
 if ($app) {
-    $user->login();
-    $this->success('Registration Successful');
+    //$user->login();
+//    $this->success('Registration Successful');
+    $this->success("Please contact the app administrator to make the subscription payment to further login into app!");
 } else {
-    $this->success('Player Created');
+    //$this->success('Player Created');
+    $this->success("Please contact the app administrator to make the subscription payment to further login into app!");
 }
 
 DB::commit();
