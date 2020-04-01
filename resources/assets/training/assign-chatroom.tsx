@@ -22,7 +22,9 @@ export class AssignChatroom extends React.Component {
             });
         })
 
-        $crud.retrieve("chat-room").then(data => {
+        $crud.retrieve("chat-room",{
+            access:true
+        }).then(data => {
             const {groups} = data;
             this.setState({
                 groups: groups
@@ -32,7 +34,8 @@ export class AssignChatroom extends React.Component {
 
     getGroup() {
         $crud.retrieve("chat-room", {
-            id: this.state.group_id
+            id: this.state.group_id,
+            access:true
         }).then(data => {
             const {group} = data;
             this.setState({

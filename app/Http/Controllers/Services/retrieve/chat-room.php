@@ -34,7 +34,12 @@ if ($player) {
     $this->setData('groups', $chat_room);
 
 } else if (Admin::loggedInOrFail()) {
-    $query = ChatRoom::query();
+    if($this->access == 'true'){
+        $query = ChatRoom::query();
+    }else{
+        $query = ChatRoom::query()->whereHas('players');
+    }
+   // $query = ChatRoom::query();
     $query->with(['players.user']);
     $query->withCount(['players']);
 
