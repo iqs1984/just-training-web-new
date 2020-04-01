@@ -705,9 +705,9 @@ $user = User::loggedInUser();
     <script src="assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js"></script>
 
 
-    <script src="assets/training/runtime.js"></script>
-    <script src="assets/training/vendor.js"></script>
-    <script src="assets/training/main.js"></script>
+    <script src="assets/training/runtime.js?version=1.0"></script>
+    <script src="assets/training/vendor.js?version=1.0"></script>
+    <script src="assets/training/main.js?version=1.0"></script>
 
     <!-- end js include path -->
 </body>
