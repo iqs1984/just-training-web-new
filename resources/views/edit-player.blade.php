@@ -103,6 +103,42 @@
 
                 </div>
             </form>
+
+            @if($player->payments->count())
+            <div class="col-lg-12 p-2">
+                <div class="card">
+                    <div class="card-header bg-success row m-0">
+                        <div class="col-8">
+                            <strong>Donot Confirmed Players</strong>
+                        </div>
+                        <div class="col-4 text-right">
+                            <strong>Total : </strong> {{$player->payments->count()}}
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover training-player-table m-0">
+                            <thead>
+                            <tr>
+                                <th>Sr No.</th>
+                                <th>Payment created Date</th>
+                                <th>Payment expire date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($player->payments as $key=>$val)
+                            <tr>
+                                <td>{{$key+1}}</td>
+                                <td>{{ date('d-M-Y',strtotime($val->date)) }}</td>
+                                <td>{{ date('d-M-Y',strtotime($val->valid_upto)) }}</td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            @endif
+
         </div>
     </div>
 

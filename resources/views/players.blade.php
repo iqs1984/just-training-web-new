@@ -55,7 +55,7 @@
                                             <th>Mobile</th>
                                             <th>Gender</th>
                                             <th>Status</th>
-                                            <th>Date</th>
+                                            <th>Payment Expire Date</th>
                                             <th>Payment</th>
                                             <th>Edit</th>
                                         </tr>
@@ -79,7 +79,7 @@
                                                     <span class="label label-sm label-danger">Unpaid</span>
                                                 @endif
                                             </td>
-                                            <td>{{date('d-M-Y',strtotime($player->created_at))}}</td>
+                                            <td>{{ $player->paymentHistory ? date('d-M-Y',strtotime($player->paymentHistory->valid_upto)) : 'Not paid'  }}</td>
                                             <td>
                                                 <label class="switchToggle tooltips" data-placement="top"
                                                        data-original-title="Payment Confirm">

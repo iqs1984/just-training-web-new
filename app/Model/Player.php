@@ -160,6 +160,10 @@ class Player extends Model {
         return $this->hasMany(Payment::class);
     }
 
+    function paymentHistory(){
+        return $this->hasOne(Payment::class)->latest();
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne|\Illuminate\Database\Query\Builder
      */
