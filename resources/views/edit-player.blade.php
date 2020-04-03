@@ -109,7 +109,7 @@
                 <div class="card">
                     <div class="card-header bg-success row m-0">
                         <div class="col-8">
-                            <strong>Donot Confirmed Players</strong>
+                            <strong>Payment History</strong>
                         </div>
                         <div class="col-4 text-right">
                             <strong>Total : </strong> {{$player->payments->count()}}
@@ -120,8 +120,8 @@
                             <thead>
                             <tr>
                                 <th>Sr No.</th>
-                                <th>Payment created Date</th>
-                                <th>Payment expire date</th>
+                                <th>Last Payment Received</th>
+                                <th>Next Payment Date</th>
                             </tr>
                             </thead>
                             <tbody>

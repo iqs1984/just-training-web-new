@@ -157,7 +157,7 @@ class Player extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     function payments() {
-        return $this->hasMany(Payment::class);
+        return $this->hasMany(Payment::class)->orderBy('id','desc');
     }
 
     function paymentHistory(){
