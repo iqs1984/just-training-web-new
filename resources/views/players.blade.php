@@ -55,7 +55,7 @@
                                             <th>Mobile</th>
                                             <th>Gender</th>
                                             <th>Status</th>
-                                            <th>Payment Expire Date</th>
+                                            <th>Next Payment Date</th>
                                             <th>Payment</th>
                                             <th>Edit</th>
                                         </tr>
