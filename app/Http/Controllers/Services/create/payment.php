@@ -16,7 +16,7 @@ $player = Player::findOrFail($this->player_id);
 
 $date = Carbon::now();
 
-$player->payment_expired = $date->addMonth(1)->addDays(10);
+$player->payment_expired = $date->endOfMonth()->addDays(10);
 $player->save();
 
 $model = $player->payments()->make();
@@ -24,8 +24,8 @@ $model = $player->payments()->make();
 
 
 $model->date = Carbon::now();
-$model->valid_upto = Carbon::now()->addMonth(1);
-//$model->valid_upto = $date->endOfMonth();
+//$model->valid_upto = Carbon::now()->addMonth(1);
+$model->valid_upto = Carbon::now()->endOfMonth();
 
 $model->save();
 
