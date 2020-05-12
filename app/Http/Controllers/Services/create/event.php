@@ -16,7 +16,8 @@ Admin::loggedInOrFail();
 $this->validate_request([
     "group_ids" => "required",
     "sport_ids" => "required",
-    "title" => "required"
+    "title" => "required",
+    "date_time" => "required"
 ]);
 
 $group_ids = array_wrap($this->group_ids);

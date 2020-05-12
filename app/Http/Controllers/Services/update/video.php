@@ -8,6 +8,7 @@ use Illuminate\Support\Carbon;
 Admin::loggedInOrFail();
 
 $this->validate_request([
+    "date_time" => "required",
     "group_ids" => "required",
     "sport_ids" => "required",
     "title" => "required",
