@@ -17,7 +17,7 @@ $player = Player::loggedInOrFail();
 $player->messages()->updateExistingPivot($this->message_id, [
     "seen_at" => Carbon::now()
 ]);
-
+/*
 $notification = Notification::make();
 $notification->title = "Abc";
 $notification->description = "demo";
@@ -25,6 +25,6 @@ $notification->data = [
     "ios_badgeType" => "Decrease",
     "ios_badgeCount" => 1
 ];
-$notification->send($player->apps);
+$notification->send($player->apps);*/
 
 $this->success("Message Read");
