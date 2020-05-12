@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Shridhar\EloquentFiles\File;
 use Shridhar\EloquentFiles\HasFile;
 
@@ -28,6 +29,20 @@ class Message extends Model {
 
     public function receivers() {
         return $this->belongsToMany(Player::class, 'message_receivers', 'message_id', 'receiver_id');
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    function read_messages_player() {
+        return $this->receivers()->wherePivot("seen_at", '!=', null);
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    function unread_messages_player() {
+        return $this->receivers()->wherePivot("seen_at", '=',null );
     }
 
     function notification() {

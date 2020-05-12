@@ -232,6 +232,13 @@ Route::prefix("admin")->group(function () {
         return view('message/messages', ['groups' => $groups, 'messages' => $messages]);
     })->name('massages')->middleware(Auth::class);
 
+    Route::get('messages/details/{id}', function ($id) {
+        $message = Message::findOrFail($id);
+        return view('message/message-details', [
+            'message' => $message
+        ]);
+    })->name('message_details')->middleware(Auth::class);
+
     Route::get('message/create', function () {
         $groups = Group::all();
         return view('message/create', ['groups' => $groups]);

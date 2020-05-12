@@ -31,7 +31,8 @@
                                 <th>Sr. No.</th>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Groups</th>
+                                <th>Read Message</th>
+                                <th>Unread Message</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -44,7 +45,13 @@
                                     <td>{{$sr_no++}}</td>
                                     <td class="font-weight-bold">{{$message->title}}</td>
                                     <td>{{substr($message->description,0, 100)?substr($message->description,0, 100)."...":substr($message->description,0, 100)}}</td>
-                                    <td>{{$message->groups->pluck('name')->implode(', ')}}</td>
+<!--                                    <td>{{$message->groups->pluck('name')->implode(', ')}}</td>-->
+                                    <td> <a href="{{url('admin/messages/details/'.$message->id)}}"
+                                            class="tooltips font-weight-bold" data-placement="top"
+                                            data-original-title="Read Messages"> {{ $message->read_messages_player()->count()  }} </a></td>
+                                    <td> <a href="{{url('admin/messages/details/'.$message->id)}}"
+                                            class="tooltips font-weight-bold" data-placement="top"
+                                            data-original-title="Unread Messages">{{ $message->unread_messages_player()->count()  }}</a></td>
                                     <td>
                                         <a href="{{url('admin/message/edit/'.$message->id)}}"
                                            class="btn btn-tbl-edit btn-xs">
