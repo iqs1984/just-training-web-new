@@ -49,9 +49,6 @@
                                 <th>Sr No.</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Mobile</th>
-                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -60,9 +57,6 @@
                                 <td>{{$key+1}}</td>
                                 <td class="player-image"><img src="{{$player->image->url}}"></td>
                                 <td>{{$player->name}}</td>
-                                <td>{{$player->gender}}</td>
-                                <td>{{$player->mobile}}</td>
-                                <td>{{$player->mobile}}</td>
                             </tr>
                             @endforeach
                             </tbody>
@@ -90,9 +84,6 @@
                                 <th>Sr No.</th>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Mobile</th>
-                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -101,9 +92,6 @@
                                 <td>{{$key+1}}</td>
                                 <td class="player-image"><img src="{{$player->image->url}}"></td>
                                 <td>{{$player->name}}</td>
-                                <td>{{$player->gender}}</td>
-                                <td>{{$player->mobile}}</td>
-                                <td>{{$player->mobile}}</td>
                             </tr>
                             @endforeach
                             </tbody>
