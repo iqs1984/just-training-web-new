@@ -28,7 +28,7 @@ class Message extends Model {
 
 
     public function receivers() {
-        return $this->belongsToMany(Player::class, 'message_receivers', 'message_id', 'receiver_id');
+        return $this->belongsToMany(Player::class, 'message_receivers', 'message_id', 'receiver_id')->withPivot('seen_at');
     }
 
     /**
@@ -44,6 +44,7 @@ class Message extends Model {
     function unread_messages_player() {
         return $this->receivers()->wherePivot("seen_at", '=',null );
     }
+
 
     function notification() {
         return $this->belongsTo(Notification::class);

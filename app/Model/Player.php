@@ -143,7 +143,7 @@ class Player extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     function messages() {
-        return $this->belongsToMany(Message::class, 'message_receivers', 'receiver_id');
+        return $this->belongsToMany(Message::class, 'message_receivers', 'receiver_id')->withPivot('seen_at');
     }
 
     /**
